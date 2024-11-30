@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/word-quiz-app/static/css/main.4881439d.css",
+    "main.js": "/word-quiz-app/static/js/main.65b4f98c.js",
+    "static/js/453.1d3061d6.chunk.js": "/word-quiz-app/static/js/453.1d3061d6.chunk.js",
+    "index.html": "/word-quiz-app/index.html",
+    "main.4881439d.css.map": "/word-quiz-app/static/css/main.4881439d.css.map",
+    "main.65b4f98c.js.map": "/word-quiz-app/static/js/main.65b4f98c.js.map",
+    "453.1d3061d6.chunk.js.map": "/word-quiz-app/static/js/453.1d3061d6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4881439d.css",
+    "static/js/main.65b4f98c.js"
+  ]
+}
