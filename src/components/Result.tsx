@@ -55,21 +55,20 @@ const Result: React.FC<ResultProps> = ({ answers, onResetQuiz }) => {
   return (
     <div className="mt-6 max-w-4xl w-full bg-white rounded-lg shadow-md p-6">
       {/* Buttons */}
-      <div className="flex justify-between items-center mb-6">
-        <div className="flex space-x-4">
+      <div className="flex flex-col md:flex-row md:justify-between items-center mb-6 space-y-4 md:space-y-0">
+        <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
           <button onClick={() => setShowChart(!showChart)} className="flex items-center py-2 px-4 bg-gray-200 rounded-lg shadow hover:bg-gray-300 transition">
             <FaChartPie className="mr-2" /> {showChart ? 'Hide Chart' : 'Show Chart'}
           </button>
           <button onClick={exportToExcel} className="flex items-center py-2 px-4 bg-gray-200 rounded-lg shadow hover:bg-gray-300 transition">
             <FaFileExcel className="mr-2" /> Export to Excel
           </button>
-
           <button onClick={onResetQuiz} className="flex items-center py-2 px-4 bg-red-100 rounded-lg shadow hover:bg-red-200 transition">
             <FaRedo className="mr-2 text-red-500" />
             Reset Quiz
           </button>
         </div>
-        <select value={filter} onChange={(e) => setFilter(e.target.value)} className="py-2 px-4 border rounded-lg shadow">
+        <select value={filter} onChange={(e) => setFilter(e.target.value)} className="py-2 px-4 border rounded-lg shadow w-full md:w-auto">
           <option value="All">All</option>
           <option value="Correct">Correct</option>
           <option value="Wrong">Wrong</option>
@@ -80,7 +79,7 @@ const Result: React.FC<ResultProps> = ({ answers, onResetQuiz }) => {
       {/* Pie Chart */}
       {showChart && (
         <div className="flex justify-center items-center mb-6">
-          <div style={{ width: 300, height: 300 }}>
+          <div className="w-full max-w-xs">
             <Pie data={pieData} />
           </div>
         </div>
@@ -88,7 +87,7 @@ const Result: React.FC<ResultProps> = ({ answers, onResetQuiz }) => {
 
       {/* Filtered Table */}
       <div className="overflow-x-auto">
-        <table className="min-w-full table-auto border-collapse border border-gray-300">
+        <table className="min-w-full border-collapse border border-gray-300">
           <thead>
             <tr className="bg-gray-100">
               <th className="border border-gray-300 py-2 px-4">#</th>
