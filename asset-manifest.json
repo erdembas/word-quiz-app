@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/word-quiz-app/static/css/main.4881439d.css",
-    "main.js": "/word-quiz-app/static/js/main.f25266c2.js",
+    "main.css": "/word-quiz-app/static/css/main.39f91cbd.css",
+    "main.js": "/word-quiz-app/static/js/main.163cfe52.js",
     "static/js/453.1d3061d6.chunk.js": "/word-quiz-app/static/js/453.1d3061d6.chunk.js",
     "index.html": "/word-quiz-app/index.html",
-    "main.4881439d.css.map": "/word-quiz-app/static/css/main.4881439d.css.map",
-    "main.f25266c2.js.map": "/word-quiz-app/static/js/main.f25266c2.js.map",
+    "main.39f91cbd.css.map": "/word-quiz-app/static/css/main.39f91cbd.css.map",
+    "main.163cfe52.js.map": "/word-quiz-app/static/js/main.163cfe52.js.map",
     "453.1d3061d6.chunk.js.map": "/word-quiz-app/static/js/453.1d3061d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4881439d.css",
-    "static/js/main.f25266c2.js"
+    "static/css/main.39f91cbd.css",
+    "static/js/main.163cfe52.js"
   ]
 }
