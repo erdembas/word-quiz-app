@@ -1,46 +1,98 @@
-# Getting Started with Create React App
+# Kelime Bilgisi Quiz Uygulaması
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Giriş
+Bir süredir, hangi kelimeleri bilip bilmediğimi kolayca ortaya çıkarabilecek bir araç arıyordum. Ancak, ihtiyaçlarımı tam olarak karşılayan bir uygulama bulamadım. Bu yüzden, **Vocabulary Quiz App** adında basit, sezgisel ve geliştirilebilir bir uygulama tasarlamaya karar verdim. Bu uygulama, kelime bilginizi test etmenizi kolaylaştırır.
 
-## Available Scripts
+Bu uygulama:
+- **Üç dil seçeneği** sunar: İngilizce, İtalyanca ve Almanca.
+- **Üç zorluk seviyesi** içerir: Başlangıç, Orta ve İleri.
+- İlerlemenizi takip eder ve sonuçlarınızı dışa aktarmanıza olanak tanır.
 
-In the project directory, you can run:
+## Özellikler
+- **İlerlemenizi Takip Edin**: Uygulama, `localStorage` ile ilerlemenizi kaydeder. Herhangi bir zamanda kaldığınız yerden devam edebilirsiniz.
+- **Sonuçları Dışa Aktarın**: Quiz sonuçlarınızı Excel dosyası olarak dışa aktarın.
+- **Etkileşimli Grafikler**: Doğru, yanlış ve atlanan cevaplarınızı görsel olarak inceleyin.
+- **Telaffuz Desteği**: `SpeechSynthesis` kullanarak kelimelerin doğru telaffuzunu dinleyin.
+- **Quiz Sıfırlama**: İlerlemenizi sıfırlayarak yeni bir quiz başlatabilirsiniz.
 
-### `npm start`
+## Nasıl Kullanılır?
+1. **Dil ve Seviye Seçin**:
+   İngilizce 🇬🇧, İtalyanca 🇮🇹 veya Almanca 🇩🇪 dillerinden birini seçin. Ardından Başlangıç, Orta veya İleri seviyelerinden birini belirleyin.
+2. **Quiz'i Çözün**:
+   Kelimeler birer birer ekrana gelir. Doğru anlamı seçin veya emin değilseniz kelimeyi atlayın.
+3. **Sonuçları Görüntüleyin**:
+   Performansınızı detaylı bir tablo veya pasta grafik üzerinden inceleyin.
+4. **Sonuçları Dışa Aktarın**:
+   Sonuçlarınızı analiz etmek için Excel dosyası olarak dışa aktarın.
+5. **Quiz'i Sıfırlayın**:
+   İlerlemenizi sıfırlayarak quiz'e sıfırdan başlayabilirsiniz.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Gelecek Planlar
+- **Durum Yönetimi Kütüphaneleri**: Daha iyi ölçeklenebilirlik ve sürdürülebilirlik için `Recoil`, `Zustand` gibi kütüphaneler entegre edilebilir.
+- **Ek Diller ve Seviyeler**: Daha fazla dil ve zorluk seviyesi desteği için katkılarınızı bekliyoruz.
+- **Kişisel Kelime Listeleri**: Kullanıcıların kendi kelime listelerini yükleyerek kişiselleştirilmiş quiz oluşturması sağlanabilir.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Katkıda Bulunun
+Bu uygulamanın geliştirilmesine destek olmak isterseniz, lütfen issue açabilir, özellik önerisinde bulunabilir veya pull request gönderebilirsiniz. Birlikte bu aracı daha kapsamlı hale getirebiliriz!
 
-### `npm test`
+## Kullanılan Teknolojiler
+- **React**: UI geliştirme için.
+- **Tailwind CSS**: Modern ve responsive tasarım.
+- **Chart.js**: Performans görselleştirme.
+- **XLSX**: Excel'e sonuç aktarma.
+- **SpeechSynthesis API**: Kelime telaffuzu için.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Lisans
+Bu proje açık kaynaklıdır ve [MIT Lisansı](LICENSE) ile lisanslanmıştır.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Vocabulary Quiz App
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Introduction
+I often found myself searching for a tool that could easily help me identify which words I know and which I don't. Surprisingly, I couldn't find an application that met my needs. So, I decided to create **Vocabulary Quiz App**, a simple, intuitive, and extensible tool to help users test their vocabulary knowledge.
 
-### `npm run eject`
+This application provides:
+- **Three language options**: English, Italian, and German.
+- **Three difficulty levels**: Beginner, Intermediate, and Advanced.
+- A seamless interface that tracks your progress and allows you to export results.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Features
+- **Track Your Progress**: The app uses `localStorage` to remember your progress. You can pause and resume at any time without losing your data.
+- **Export Results**: Export your quiz results as an Excel file to review later.
+- **Interactive Charts**: View your performance visually with pie charts showing correct, wrong, and skipped answers.
+- **Speech Functionality**: Listen to the pronunciation of the words using `SpeechSynthesis`.
+- **Quiz Reset**: Reset your progress to start fresh.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How to Use
+1. **Select a Language and Level**:
+   Choose between English 🇬🇧, Italian 🇮🇹, or German 🇩🇪. Then pick a difficulty level: Beginner, Intermediate, or Advanced.
+2. **Answer the Quiz**:
+   Words will appear one by one. Choose the correct meaning or skip the word if you're unsure.
+3. **View Results**:
+   Check your performance through a detailed result table or a pie chart.
+4. **Export Results**:
+   Export your results to an Excel file for further analysis.
+5. **Reset Quiz**:
+   Reset your progress and start a new quiz anytime.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Future Plans
+- **State Management Libraries**: To enhance scalability and maintainability, support for `Recoil`, `Zustand`, or similar state management tools can be integrated.
+- **Additional Languages and Levels**: Contributions to support more languages and difficulty levels are welcome.
+- **Custom Word Lists**: Users may upload their own word lists for personalized quizzes.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Contribute
+If you'd like to support the development of this app, feel free to open issues, suggest features, or submit pull requests. Together, we can expand this tool to support more languages, levels, and features!
 
-## Learn More
+## Technologies Used
+- **React**: UI framework.
+- **Tailwind CSS**: For responsive and modern design.
+- **Chart.js**: To visualize performance.
+- **XLSX**: For exporting results to Excel.
+- **SpeechSynthesis API**: For word pronunciation.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
+This project is open-source and licensed under the [MIT License](LICENSE).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+

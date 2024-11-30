@@ -14,6 +14,20 @@ interface QuizProps {
   onResetQuiz: () => void;
 }
 
+// Fisher-Yates Shuffle Algoritması
+const shuffleArray = (array: any[]) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+const getRandomWrongAnswers = (data: any[], currentQuestionIndex: number, count: number) => {
+  const wrongAnswers = data.filter((_, index) => index !== currentQuestionIndex);
+  return shuffleArray(wrongAnswers).slice(0, count);
+};
+
 const Quiz: React.FC<QuizProps> = ({ data, currentQuestionIndex, answers, onAnswer, language, level, onExportResults, onResetQuiz }) => {
   const [showResultsModal, setShowResultsModal] = useState(false);
   const question = data[currentQuestionIndex];
@@ -64,6 +78,12 @@ const Quiz: React.FC<QuizProps> = ({ data, currentQuestionIndex, answers, onAnsw
     window.speechSynthesis.speak(utterance);
   };
 
+  const wrongAnswers = getRandomWrongAnswers(data, currentQuestionIndex, 3);
+  const options = shuffleArray([
+    ...wrongAnswers.map((option) => ({ text: option.turkish, isCorrect: false })), // Yanlış cevaplar
+    { text: question.turkish, isCorrect: true }, // Doğru cevap
+  ]);
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-200 relative">
       <div className="max-w-xl w-full bg-white rounded-lg shadow-md">
@@ -77,24 +97,13 @@ const Quiz: React.FC<QuizProps> = ({ data, currentQuestionIndex, answers, onAnsw
 
         {/* Body */}
         <div className="p-6">
-          <h3 className="text-xl font-semibold text-gray-700 mb-6 text-center">
-            {question.word}
-            <button onClick={handleSpeak} className="py-2 px-4 ">
-              🔊
-            </button>
-          </h3>
+          <h3 className="text-xl font-semibold text-gray-700 mb-6 text-center">{question.word}</h3>
           <div className="grid grid-cols-2 gap-4">
-            {data
-              .filter((_, index) => index !== currentQuestionIndex)
-              .slice(0, 3)
-              .map((option, index) => (
-                <button key={index} onClick={() => handleAnswer(option.turkish)} className="py-3 px-5 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition">
-                  {option.turkish}
-                </button>
-              ))}
-            <button onClick={() => handleAnswer(question.turkish)} className="py-3 px-5 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition">
-              {question.turkish}
-            </button>
+            {options.map((option, index) => (
+              <button key={index} onClick={() => handleAnswer(option.text)} className="py-3 px-5 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition">
+                {option.text}
+              </button>
+            ))}
           </div>
         </div>
 
